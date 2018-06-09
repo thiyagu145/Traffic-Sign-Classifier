@@ -45,5 +45,5 @@ The accuracy increases slightly when augmented dataset is used. Hence, to get hi
 The main difference between the modified LeNet model and the original are that, in the original model only the outputs of the last layers are considered for classification, whereas in the modified model the initial layers outputs are also considered. This implies that, both the initial layer feature maps as well as the final layer feature maps are considered for classification and hence, the classification accuracy is high. 
 
 ## Model performance on new images
-Eight new traffic signs were obtained from the interned for traffic sign classification purpose. The model has an accuracy of **87.5%** on these new images. 7/8 images were classified correctly. This conveys that the model performance is very good and needs some more fine tuning to improve the performance. The results along with the softmax probabilites are given in the jupyter notebook. 
+Eight new traffic signs were obtained from the internet for traffic sign classification purpose. The model has an accuracy of **87.5%** on these new images. 7/8 images were classified correctly. This conveys that the model performance is very good and needs some more fine tuning to improve the performance. The results along with the softmax probabilites are given in the jupyter notebook. 
 
