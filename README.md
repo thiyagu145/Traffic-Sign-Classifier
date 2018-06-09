@@ -17,12 +17,12 @@ The image values are in the range of 0-255. They are normlized between the value
 ## Model Architecture
 The architecture was based on the LeNet architecture. There were some changes made to the architecture to improve the performance. The summary of the model used is given below
 
-Layer1 : Convolution with 6 filters of kernel size 5x5 followed by a relu activation
-Layer2 : Max Pooling of kernel size 2x2
-Layer3 : Convolution with 16 filters of kernel size 5x5 followed by a relu activation
-Layer4 : Max Pooling of kernel size 2x2
-Layer5 : Convolution with 32 filters of kernel size 3x3 followed by a relu activation
-Layer6 : Fully connected layer by concatenating flattened layer3 and layer5 followed by dropout of 0.5 during training
-Layer7 : Fully connected with input 1888 and output 1024
-Layer8 : Fully connected with input 1024 and output 512
-Layer9 : Fully connected with input 512 and output 43 (Output number of classes)
+**Layer1** : Convolution with 6 filters of kernel size 5x5 followed by a relu activation
+**Layer2** : Max Pooling of kernel size 2x2
+**Layer3** : Convolution with 16 filters of kernel size 5x5 followed by a relu activation
+**Layer4** : Max Pooling of kernel size 2x2
+**Layer5** : Convolution with 32 filters of kernel size 3x3 followed by a relu activation
+**Layer6** : Fully connected layer by concatenating flattened layer3 and layer5 followed by dropout of 0.5 during training
+**Layer7** : Fully connected with input 1888 and output 1024
+**Layer8** : Fully connected with input 1024 and output 512
+**Layer9** : Fully connected with input 512 and output 43 (Output number of classes)
