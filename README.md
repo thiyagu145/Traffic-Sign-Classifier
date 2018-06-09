@@ -17,18 +17,33 @@ The image values are in the range of 0-255. They are normlized between the value
 ## Model Architecture
 The architecture was based on the LeNet architecture. There were some changes made to the architecture to improve the performance. The summary of the model used is given below
 
-**Layer1** : Convolution with 6 filters of kernel size 5x5 followed by a relu activation. 
-**Layer2** : Max Pooling of kernel size 2x2. 
-**Layer3** : Convolution with 16 filters of kernel size 5x5 followed by a relu activation. 
-**Layer4** : Max Pooling of kernel size 2x2. 
-**Layer5** : Convolution with 32 filters of kernel size 3x3 followed by a relu activation. 
-**Layer6** : Fully connected layer by concatenating flattened layer3 and layer5 followed by dropout of 0.5 during training. 
-**Layer7** : Fully connected with input 1888 and output 1024. 
-**Layer8** : Fully connected with input 1024 and output 512. 
-**Layer9** : Fully connected with input 512 and output 43 (Output number of classes). 
+**Layer1** : Convolution with 6 filters of kernel size 5x5 followed by a relu activation <br />
+**Layer2** : Max Pooling of kernel size 2x2  <br />
+**Layer3** : Convolution with 16 filters of kernel size 5x5 followed by a relu activation <br />
+**Layer4** : Max Pooling of kernel size 2x2 <br />
+**Layer5** : Convolution with 32 filters of kernel size 3x3 followed by a relu activation <br />
+**Layer6** : Fully connected layer by concatenating flattened layer3 and layer5 followed by dropout of 0.5 during training <br />
+**Layer7** : Fully connected with input 1888 and output 1024 <br />
+**Layer8** : Fully connected with input 1024 and output 512 <br />
+**Layer9** : Fully connected with input 512 and output 43 (Output number of classes) <br />
 
 ## Model Training
-The hyper-parameters for training the model are given below:
-Batch Size: 128
-Number of epochs: 40
+The hyper-parameters for training the model are given below: <br />
+Batch Size: 128 <br />
+Number of epochs: 40 <br />
+Learning Rate: 0.001 <br />
+Optimizer: Adam <br />
+
+## Solution Approach
+The original LeNet-5 architecture gave an accuracy of 90% on the validation set. Hence to improve that, I used the architecture given in the LeNet for traffic sign classification paper. The architecture is given below
+
+![alt text](https://raw.githubusercontent.com/thiyagu145/Traffic-Sign-Classifier/master/model-arch/model-architecture.png)
+
+Though the number of filters and the kernel sizes were not exactly similar to the architecture from the paper, the basic skeleton was taken. The highest validation accuracy was about **95.8%** and the test accuracy was around **94.1%**
+The accuracy increases slightly when augmented dataset is used. Hence, to get higher accuracies, different architectures have to be tried. <br />
+
+The main difference between the modified LeNet model and the original are that, in the original model only the outputs of the last layers are considered for classification, whereas in the modified model the initial layers outputs are also considered. This implies that, both the initial layer feature maps as well as the final layer feature maps are considered for classification and hence, the classification accuracy is high. 
+
+## Model performance on new images
+Eight new traffic signs were obtained from the interned for traffic sign classification purpose. The model has an accuracy of **87.5%** on these new images. 7/8 images were classified correctly. This conveys that the model performance is very good and needs some more fine tuning to improve the performance. The results along with the softmax probabilites are given in the jupyter notebook. 
 
