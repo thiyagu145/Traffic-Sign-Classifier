@@ -10,9 +10,9 @@ The total number of signs in the dataset are 43. From the jupyter notebook, we c
 
 ## Pre-processing Techniques used
 1) RGB to Gray scale
-The first step in pre-processing is to convert the color images into gray scale. This is done by averaging the values of the three channels in each image. 
+The first step in pre-processing is to convert the color images into gray scale. This is done by averaging the values of the three channels in each image. For an image classification task, the color does not play that much of an importance. If you consider other examples such as image segmentation etc, we may need a color image to work on. For a classification task, the color does not matter and we look only on the edges and other structural information in the image. Hence, it is better to convert the 3-channel image to a single channel gray image. Another advantage is that, the number of parameters are also reduced if we consider the gray scale image. 
 2) Image normalization
-The image values are in the range of 0-255. They are normlized between the values of -1 and +1 for making the range smaller. 
+The image values are in the range of 0-255. They are normlized between the values of -1 and +1 for making the range smaller. A lot of features are extracted from the images. For any machine learning model, the images have to be normalized to make all the images in the same range. If the features are in different ranges, the optimization will not be able to work efficiently. This is the reason why the images have to be normalized before the features are extracted. 
 
 ## Model Architecture
 The architecture was based on the LeNet architecture. There were some changes made to the architecture to improve the performance. The summary of the model used is given below
@@ -45,5 +45,7 @@ The accuracy increases slightly when augmented dataset is used. Hence, to get hi
 The main difference between the modified LeNet model and the original are that, in the original model only the outputs of the last layers are considered for classification, whereas in the modified model the initial layers outputs are also considered. This implies that, both the initial layer feature maps as well as the final layer feature maps are considered for classification and hence, the classification accuracy is high. 
 
 ## Model performance on new images
-Eight new traffic signs were obtained from the internet for traffic sign classification purpose. The model has an accuracy of **87.5%** on these new images. 7/8 images were classified correctly. This conveys that the model performance is very good and needs some more fine tuning to improve the performance. The results along with the softmax probabilites are given in the jupyter notebook. 
+Eight new traffic signs were obtained from the internet for traffic sign classification purpose. All the images are very good. They are taken in very good lighting conditions. Hence it will not be that difficult for the model to classify these images correctly. Also, the eight images are diverse and hence by use of these images, we can decide on the perfomance of the model to some extent. <br />
+The model has an accuracy of **87.5%** on these new images. 7/8 images were classified correctly. This conveys that the model performance is very good and needs some more fine tuning to improve the performance. The results along with the softmax probabilites are given in the jupyter notebook. <br />
+The accuracy on the test dataset is around 94.1%. The accuracy on the new images is 87.5%. This is not a lot of difference because the number of images in the test set are very high when compared to that of the number of images in the new image dataset. Hence, we cannot compare both these accuracies directly since the number of images are not the same in both the datasets. Also, the sign 25(road work) is misclassified as sign 11(right of way). This might be due to the fact that both these images have similar type of edges. Thus, the model performs very well on the traffic signs downloaded from the internet. 
 
